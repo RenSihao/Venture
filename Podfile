@@ -5,6 +5,7 @@ target 'Venture' do
 
 # 自动布局
 pod 'SDAutoLayout', '~> 1.53'
+pod ‘Masonry’
 
 # 无限轮播图
 pod 'SDCycleScrollView','~> 1.64'
@@ -27,6 +28,9 @@ pod 'MJRefresh'
 
 # 字典模型转换器
 pod 'MJExtension'
+
+# 键盘处理
+pod 'IQKeyboardManager'
 
 end
 

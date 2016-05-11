@@ -9,22 +9,54 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+/**
+ *  原生framework
+ */
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 
 
+/**
+ *  第三方框架
+ */
+#import <SVProgressHUD.h>
+#import <FMDB.h>
+#import <Masonry.h>
+#import <KeyboardManager.h>
 
 
+/**
+ *  宏定义
+ */
+#import "AppMacro.h"
 
 
+/**
+ *  全局const常量
+ */
+#import "Notifications.h"
+#import "GlobalConst.h"
+#import "Http.h"
+#import "Keys.h"
+#import "NSUserDefaultKeys.h"
+#import "SeaUtilities.h"
 
 
+/**
+ *  类目头文件
+ */
+#import "Category.h"
 
+/**
+ *  管理器
+ */
+#import "UserManager.h"
 
+/**
+ *  模型组
+ */
+#import "UserModel.h"
 
 
 

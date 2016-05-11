@@ -108,7 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param color  The color.
  */
-+ (nullable UIImage *)imageWithColor:(UIColor *)color;
+//+ (nullable UIImage *)imageWithColor:(UIColor *)color;
 
 /**
  Create and return a pure color image with the given color and size.

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "TabBarController.h"
+#import "LoginVC.h"
+#import "SeaNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +19,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     
+    
+    [self setUpKeyWindow];
+    
+    [self setUpKeyBoardManager];
     
     
     return YES;
@@ -45,5 +51,48 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
+
+#pragma mark - 根视图控制器
+
+- (void)setUpKeyWindow
+{
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+    
+    if ([UserManager sharedInstance].userModel)
+    {
+        TabBarController *tabBarController = [[TabBarController alloc] init];
+        self.window.rootViewController = tabBarController;
+    }
+    else
+    {
+        LoginVC *loginVC = [[LoginVC alloc] init];
+        SeaNavigationController *nav = [[SeaNavigationController alloc] initWithRootViewController:loginVC];
+        self.window.rootViewController = nav;
+    }
+}
+
+#pragma mark - 全局键盘管理
+
+- (void)setUpKeyBoardManager
+{
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = NO;
+}
+
+
+
+
+
+
+
+
 
 @end
